@@ -102,3 +102,27 @@
     $email = $_POST['email'];
     $nome = $_POST['nome'];
   }
+
+  /*Swicth - verificador para ver se a variavel 1 fazer 1, se for 2 fazer 2, se for 3 fazer 3, se não fazer o default. 
+    Podemos usar o mesmo código para vários cases também.
+  */
+
+  switch( $variavel ){
+    case 1: 
+      echo "1";
+      break;
+
+    case 2: 
+      echo "2";
+      break;
+    
+    case 3:
+    case 4:
+    case 5:
+      echo "3";
+      break;
+
+    default:
+      echo "default";
+      break;
+  }
