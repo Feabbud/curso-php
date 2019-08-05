@@ -58,3 +58,32 @@
 
   //Para adicionar uma informação na última posição fizemos:
     $array[] = "valor";
+
+  // Variávei Globais - variáveis que são padrão do PHP. Exemplo:
+  $_POST["nome"];
+  $_GET["numero"];
+  $_SERVER[];
+
+  // Variáveis Constantes - variáveis que não se alteram no sistema. true e false são constantes padrão do PHP
+  define("NOME", "Valor");
+  
+
+  /* IF ELSE - verificador de se/senão
+
+    se (condicao && condicao) { 
+      faça isso 
+    } senão { 
+      faça isso
+    } 
+
+    && - as duas condições tem que estar corretas;
+    || - uma condição correta;
+    ! - altera o valor de true para false e de false para true
+
+  */
+  $condicao = true;
+  if($condicao){
+    echo "Felipe";
+  } else {
+    echo "Claudia";
+  }
