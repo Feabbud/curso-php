@@ -87,3 +87,18 @@
   } else {
     echo "Claudia";
   }
+
+  /*Recebendo dados de formulários
+    - usamos o if para fazer a validação dos dados;
+    - isset - variável global para verificar se estamos recebendo os dados do formulário, se a variável existe;
+    - $_POST['chave do input'];
+    - && - se as duas condições forem verdadeiras;
+    - empty - variável global que verifica se a nossa variável está vazia ou não;
+      - !empty - verifica se a variável não está vazia;
+    - armazenamos os dados em variáveis dentro do IF.
+  */
+
+  if( isset($_POST['email']) && !empty($_POST['email']) ){
+    $email = $_POST['email'];
+    $nome = $_POST['nome'];
+  }
