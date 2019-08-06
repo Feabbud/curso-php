@@ -126,3 +126,8 @@
       echo "default";
       break;
   }
+
+  // Usando arquivos múltiplos
+  require "arquivo.php"; // código de importação de arquivo que para seu script se houver erros.
+  require_once "arquivo.php"; // funciona igual ao require mas importamos só uma vez não precisamos importar várias vezes.
+  include "arquivo.php"; // importa e só exibe uma mensagem de erro e continua o script.
