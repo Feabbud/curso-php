@@ -50,3 +50,19 @@
   foreach ($variable as $key => $value) {
     echo $key ." = ". $value; // chave = valor;
   }
+
+  // Funções
+
+  function nomeDaFuncao (parametros ou não){
+    $variavel = "alguma coisa";
+
+    return $variavel;
+
+    //ou
+
+    return "alguma coisa";
+  }
+
+  //passamos a usar a function da maneira abaixo
+
+  $resultado = nomeDaFuncao(parametro, parametro);
