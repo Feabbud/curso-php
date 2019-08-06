@@ -93,3 +93,13 @@
   $resultado = rand(0, 4);
 
   echo "O ganhador do sorteio é: ".$sorteio[$resultado];
+
+  // Manipulação de textos
+
+  // Explode - divide minha string em array no lugar onde queremos. explode("onde queremos explodir", string para explodir);
+  $nome = "Felipe Ricardo";
+  $divisao = explode(" ", $nome);
+
+  // Implode - junta um array e transforma em uma string. implode("o que colocamos no lugar das virgulas do array", variavel do array);
+  $array = array("felipe", "ricardo", "silveira");
+  $juntar = implode(" ", $array);
