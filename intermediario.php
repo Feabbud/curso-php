@@ -66,3 +66,30 @@
   //passamos a usar a function da maneira abaixo
 
   $resultado = nomeDaFuncao(parametro, parametro);
+
+  // Date - função do PHP para manipular datas. Verificar o php.net/date
+
+  $dataAtual = date("d-m-Y \à\s H:i:s"); // Exemplo que mostra o dia mes e ano completo com o horário hora:minutos:segundos.
+
+  //  Funções Matemáticas
+  echo abs(-10); // Retorna o número absoluto do parâmetro, que n caso é 10.
+
+  //  Round - Retorna o número arredondado do número do parâmetro. De 5 para cima arredonda para 10, abaixo arredonda para 0.
+  echo round(5.8);// 6 
+  echo round(5.5); // 5
+
+  // Ceil - sempre arredonda para cima
+  echo ceil(2.5); //3
+  echo ceil(2.2); //3
+
+  // Floor - sempre arredonda para baixo
+  echo floor(2.8); //2
+  echo floor(2.2); //2
+
+  // Rand - Gera um número aleatório. Muito usado para sorteios com arrays.
+  echo rand(2, 10); //  rand(numMin, numMax);
+
+  $sorteio = array("felipe", "sacha", "baguero", "choco", "bella");
+  $resultado = rand(0, 4);
+
+  echo "O ganhador do sorteio é: ".$sorteio[$resultado];
