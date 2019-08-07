@@ -129,4 +129,37 @@
   $var = ucfirst($texto); // Retorna Felipe ricardo
   $var = ucwords($texto); // Retorna Felipe Ricardo
 
+  // Manipulação de arrays
+  // array_keys() - retorna outro array somente com os as chaves de um array mostrando sua posição.
+  $array = array(
+    "nome" => "Felipe",
+    "idade" => "30",
+    "cidade" => "Garopaba"
+  );
+
+  $key = array_keys($array); // Retorna [0] => nome, [1] => idade, [2] => cidade.
+
+  // array_values() - retorna os valores do array mostrando sua posição
+  $values = array_values($array); // retorna [0] => Felipe, [1] => 30, [2] => Garopaba.
+
+  //  array_pop() - não retorna nada. Remove o último registro do array.
+  $removeUltimo = array_pop($array); // retorna o array sem cidade => Garopaba.
+
+  // array_shift() - na retorna nada. Remove o primeiro registro do array.
+  $removePrimeiro = array_shift($array); // retorna o array sem nome => Felipe
+
+  // asort() - ordena os registro de um array em ordem alfabética dos valores.
+  // arsort() - ordena os registros de um array em ordem alfabética dos valores reversa.
+  asort($array);
+  arsort($array);
+
+  // count() - conta quantos registros tem no array. 
+  echo "Total de alunos:  ".count($array); // retorna quantos registros possui o array.
+
+  // in_array() - checa se possui o valor dentro do array. Usado bastante em IF. in_array("valor", $array);
+
+  if(in_array("Felipe", $array)){
+    echo "O vencedor é o Felipe";
+  }
+
 
