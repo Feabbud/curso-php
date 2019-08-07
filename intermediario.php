@@ -168,3 +168,93 @@
     base64_decode() - descriptografa o base64.
 */
 
+/*
+  SQL
+    Criando banco de dados - create database nome_do_banco;
+
+    Tipos de dados
+    - inteiro(integer), varchar(strings), date(datas), datatime(ano, mês, dia, hora, segundo);
+    - para deixar em branco em um possivel cadastro(não obrigatório), anotamos como mulo no phpmyadmin;
+    - primary key, chave única;
+    - AI, auto incremento;
+
+    Comandos de seleção - SELECT
+      SELECT coluna FROM tabela; - select geral de uma coluna específica;
+      SELECT coluna, coluna FROM tabela; - select de várias colunas específicas;
+      SELECT * FROM tabela; - select de todos os dados.
+
+    Comando para inserção de dados - INSERT
+      INSERT INTO  tabela SET campo = ‘valor’, campo = ‘valor’; Funciona só no mysql;
+      INSERT INTO tabela (campo, campo) VALUES (‘valor’, ‘valor’); Funciona em todos os bancos.
+   
+    Comando para atualização - UPDATE
+      UPDATE tabela SET campo_mudar = ‘campo_novo’ where ID = valor_id;
+
+    Comando para deletar - DELETE
+      DELETE from tabela WHERE id  = valor_id;
+
+    Filtrar com WHERE
+      usamos combinado com o WHERE o AND(e) ou o OR(ou);
+      SELECT * FROM tabela WHERE id = valor_id AND nome = ‘valor_nome’;
+      SELECT * FROM tabela WHERE id = valor_id OR id = valor_id;
+
+    Melhorando as pesquisas - LIKE, BETWEEN e IN
+      LIKE - recurso de select que procura no banco se o dado contém os caracteres ou não. Usamos a % antes para procurar o dado que termina com o caractere, depois para procurar quando começa com o caractere ou antes e depois para procurar o que contém o caractere em qualquer parte.
+        SELECT * FROM tabela WHERE campo LIKE ‘%caractere%’; contém em tudo;
+        SELECT * FROM tabela WHERE campo LIKE ‘%caractere’; contém no começo;
+        SELECT * FROM tabela WHERE campo LIKE ‘%caractere’; contém no final.
+
+      BETWEEN - recurso usado para pesquisar valores entre duas condições. Números ou datas.
+        SELECT * FROM tabela WHERE campo BETWEEN ‘campo’ and ‘campo’.
+
+      IN - recurso usado para pesquisar dados que contém dentro de uma lista específica;
+        SELECT * FROM tabela WHERE campo IN (dado1, dado2).
+
+      HAVING - basicamente a mesma coisa que o WHERE, mas é usado para filtrar quando queremos criar uma coluna somente para aparecer na consulta;
+        SELECT *, nome AS ‘login usuários’ FROM tabela HAVING nome LIKE ‘%caractere%’;
+        Seleciona tudo e coloca os dados que contém o caractere específico na nova coluna login usuários. Com o WHERE daria erro.
+
+      ORDER BY - ordena por algum campo específico;
+        SELECT * FROM tabela ORDER BY campo ASC/DESC. ASC padrão crescente. DESC decrescente.
+
+      LIMIT - quantidade de registros que queremos buscar. Para pular registros utilizamos a vírgula (,).
+        SELECT * FROM tabela LIMIT 1, 2; Pula o primeiro e retorna 2 registros;
+        SELECT * FROM tabela LIMIT 2; Retorna 2 registros;
+
+      GROUP BY - faz a contagem dos registros selecionados, seleciona eles e agrupa colocando em uma nova coluna
+        SELECT COUNT(*) as contagem, campoQueVamosContar FROM tabela GROUP BY campoQueQueremosAgrupar
+        seleciona tudo e faz uma contagem colocando na nova coluna contagem, selecionamos todos os campos que queremos depois e agrupamos pelo campo que queremos.
+    
+    Consultando em mais de uma tabela - JOIN
+      - para mostrar o campo nessa consulta, usamos o nomedatabela.nomedocampo;
+          JOIN sempre antes dos filtros WHERE e HAVING
+          
+          INNER JOIN: só vai retornar registros se a seleção for bem sucedida. Registros que não tem relacionamento entre as tabelas não serão mostrados;
+          SELECT tabela1.campo, tabela2.campo FROM tabelaPrincipal INNER JOIN tabela.secundária ON tabela2.campo = tabela1.campo;
+
+          LEFT JOIN: retorna todos os registros da tabela da esquerda, independente se tem relação ou não;
+          RIGHT JOIN: retorna todos os registros da direita, independente se tem relação ou não;
+
+    Criação de funções
+      facilita para facilitar algumas tarefas repetitivas.
+      alteramos o DELIMITER (o padrão é o ;) para diferenciar e depois de fazer a função retornamos para o padrão;
+    
+      DELIMITER $$
+        CREATE FUNCTION nomeMaiusculo(param TIPO(100)) //criar a função
+        RETURNS TIPO(100) //o que vai ser retornado
+        BEGIN  //inicio
+          DECLARE nome TIPO(100); //declaramos uma variável
+        SET nome = alguma coisa; //utilizando a variável
+        RETURN nome; //retorna
+            END$$ //finaliza a função
+      DELIMITER; //volta o delimiter para o padrão ;
+
+    Separando grupos de dados em base gigante - CREATE VIEW
+      tabela criada para visualização apenas;
+      diminui o processamento se a base for muito grande;
+      separa por grupos específicos;
+      
+      CREATE VIEW nomeDaView as | criamos a view 
+          SELECT * FROM tabela WHERE condição | colocamos a seleção que queremos separar
+
+  */
