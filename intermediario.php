@@ -103,3 +103,30 @@
   // Implode - junta um array e transforma em uma string. implode("o que colocamos no lugar das virgulas do array", variavel do array);
   $array = array("felipe", "ricardo", "silveira");
   $juntar = implode(" ", $array);
+
+  // number_format - formata numeros grandes. number_format(numero, casas decimais, caracter dezenas, caracter milhares);
+  $var = number_format(8.521447855, 2); // mostra 2 numeros depois do ponto.
+  $var = number_format(38325.32589, 2, ",", "."); // Mostra 2 numeros depois da virgula e muda o "." das dezenas e a virgula dos milhares para virgula nas dezenas e "." nos milhares.
+
+  // str_replace - troca palavras em uma frase ou texto. str_replace("palavra que quero trocar", "palavra que vou colocar", string da frase ou texto);
+  $text = "Felipe Ricardo Silveira Abbud";
+  $var = str_replace("Abbud", "Lazzarotto", $text);//retorna Felipe Ricardo Silveira Lazzarotto
+
+  /* strtolower() - transforma a string toda minuscula. 
+     strtoupper() - transforma a string toda em maiúscula.
+  */
+  $var = strtolower("FELIPE");// retorna felipe
+  $var = strtoupper("felipe");// retorna FELIPEs
+
+  // substr() - retorna os caracteres de uma string conforme o número que você especificou. substr(string, posição onde começa, posição onde termina);
+  $texto = "Felipe";
+  $var = substr($texto, 0, 3); // Retorna Fel.
+
+  /* ucfirst() - coloca a primeira letra da frase ou palavra em maiúsculo. 
+     ucwords() - coloca a primeira letra de todas as palaras em maiúsculo.
+  */
+  $texto = "felipe ricardo";
+  $var = ucfirst($texto); // Retorna Felipe ricardo
+  $var = ucwords($texto); // Retorna Felipe Ricardo
+
+
