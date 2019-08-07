@@ -162,4 +162,9 @@
     echo "O vencedor é o Felipe";
   }
 
+/* Introdução a Criptografia
+    md5() - tipo de criptografia irreversível. Usado bastante para senhas
+    base64_encode() - criptografia reversível. 
+    base64_decode() - descriptografa o base64.
+*/
 
