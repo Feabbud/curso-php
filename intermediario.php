@@ -1,23 +1,23 @@
 <?php
   /*  While
         loop irá fazer algo até que a condição seja completa. Gera uma lista de alguma coisa.
-        Temos que usar o incremento ou decremento para ele funcionar. x++ ou x--;
+        Temos que usar o incremento ou decremento para ele funcionar. contador++ ou contador--;
   */ 
 
-  $x = 0;
+  $contador = 0;
 
-  while( $x <= 10 ){
-    echo "O x vale ".$x;
-    $x++;
-  } //enquanto o $x for menor ou igual a 10, ele mostra na tela o código.
+  while( $contador <= 10 ){
+    echo "O x vale ".$contador;
+    $contador++;
+  } //enquanto o $contador for menor ou igual a 10, ele mostra na tela o código.
 
   /*  FOR
         PARA ($varivavel = 0; condição; encremento ou decremento) { faça isso que tem aqui };
         Mais usado que o while.
   */
 
-  for($x = 0; condição; $x++){
-    echo "o valor de X -e ". $x;
+  for($contador = 0; condição; $contador++){
+    echo "o valor de X -e ". $contador;
   }
 
   /*  FOREACH - PARA CADA
