@@ -4,15 +4,28 @@
     Para fazer códigos PHP na linha de comando usamos php -a onde vai abrir um painel interativo na linha de comando.
   */
 
+  //Mostrando informações na tela.
+  echo "Hello World!";
+
   // Variáveis - onde guardamos informações para serem usadas em todo o sistema.
   $nome = "Felipe";
 
-  //Tipos de variáveis
+  /*Tipos de variáveis - linguagem dinamicamente tipada onde não precisamos dizer qual tipo da ariável que estamos usando.
+    gettype($variavel) - verifica qual tipo de variavel que é.
+  */
   $nome = "Claudia"; //String
   $numero = 300;//Integer
-  $float = 3.5;//Float
+  $float = 3.5;//Float ou double
   $boolean = true;// true or false
   $array = array(2, 3, "Felipe", true);//conjunto de informações em uma única variável
+
+    // Tipo String
+      //Concatenando informações de variáveis com texto normal.
+      //Possuímos caracteres especial que temos no php.net/strings.
+      // PHP_EOL - PHP_EndOfLine - mesmo efeito de pular linha do \n.
+      echo 'Meu nome é: ' .$nome. '.'; //String com aspas simples só é interpretado como string e precisamos concatenar variáveis com ".".
+      echo "Meu nome é: $nome"; //String com aspas duplas interpreta as variáveis como variáveis.
+
 
   // Operações Matemáticas
   $soma = 10 + 10;
@@ -22,13 +35,7 @@
   $exponenciacao = 2 ** 3; //2 elevado ao cubo.
   $restoDivisao = 10 % 3;
 
-  //Mostrando informações na tela.
-  echo "Hello World!";
-
-  //Concatenando informações de variáveis com texto normal.
-  echo "Meu nome é: " .$nome. ".";
-
-  /*Arrays - lista de várias informações. Pode ser informações de todos os tipos; */
+   /*Arrays - lista de várias informações. Pode ser informações de todos os tipos; */
 
   // array simples
   $array = array("index 0", "index 1", "index 2");
@@ -84,15 +91,36 @@
       faça isso
     } 
 
+    se (condicao && condicao) { 
+      faça isso 
+    } senão se{ 
+      faça isso
+    } 
+
+    Se o bloco do if tem somente uma linha, não precisamos das chaves.
+
+    se (condição)
+      faça esse código
+
+
     && - as duas condições tem que estar corretas;
     || - uma condição correta;
     ! - altera o valor de true para false e de false para true
+
+    Ternário
+    $variavel = $condicao ? $valorSeVerdadeiro : $valorSeFalso;
 
   */
   $condicao = true;
   if($condicao){
     echo "Felipe";
   } else {
+    echo "Claudia";
+  }
+
+  if($condicao){
+    echo "Felipe";
+  } else if($condicao2){
     echo "Claudia";
   }
 
