@@ -264,4 +264,16 @@
   */
   $autor = addslashes($_POST["busca"]);
 
+  /* Sessões e Cookies */
+  //Session - enquanto o navegador está aberto, a sessão fica armazenada no servidor, fechando, o valor da sessão se apaga.
+  session_start(); //inicia a sessão.
+  $_SESSION["chave"] = "valor da sessão"; //armazena um valor na seção com o nome chave.
+
+  // Cookie - salva um valor no navegador por tempo determinado. setcookie("chave", "valor armazenado", tempo de expiração em segundos);
+  setcookie("chave", "valor armazenado", time()+3600); //tempo de expiração de 1hr
+  $_COOKIE["chave"]; //mostra o valor armazenado.
+
+
+
+
 
