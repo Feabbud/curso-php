@@ -51,6 +51,28 @@
     echo $key ." = ". $value; // chave = valor;
   }
 
+  // listar arrays com for. O count pega o tamanho do array.
+  for($i = 0; $i < count($array); $i++){
+    echo $array[$i] . PHP_EOL;
+  }
+
+  $conta1 = [
+    'titular' => 'Felipe',
+    'idade' => 30
+  ]
+
+  $conta2 = [
+    'titular' => 'Felipe',
+    'idade' => 30
+  ]
+
+  $contas = [$conta1, $conta2]
+
+  for($i = 0; $i < count($array2); $i++){
+    echo $array[$i]["tituar"] . PHP_EOL;
+  } // Para acessar arrays dentro de arrays utilizamos, no for pelo menos, o $i para o indice e outra chave com o nome
+
+
   // Funções
 
   function nomeDaFuncao (parametros ou não){
@@ -147,6 +169,9 @@
 
   // array_shift() - na retorna nada. Remove o primeiro registro do array.
   $removePrimeiro = array_shift($array); // retorna o array sem nome => Felipe
+
+  // adiciona na ultima posição. No caso de uma lista com indices numéricos tipos CPF, é melhor ter o cpf para adicionar. Numeros numericos é ok.
+  $adiciona[] = "valor";
 
   // asort() - ordena os registro de um array em ordem alfabética dos valores.
   // arsort() - ordena os registros de um array em ordem alfabética dos valores reversa.

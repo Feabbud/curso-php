@@ -47,13 +47,19 @@
    /*Arrays - lista de várias informações. Pode ser informações de todos os tipos; */
 
   // array simples
-  $array = array("index 0", "index 1", "index 2");
+  $array = array("index 0", "index 1", "index 2"); //ou
+  $array = ["index 0", "index 1", "index 2"];
 
-  // array com chaves
+  // array assosiativo
   $array = array(
     "chave" => "valor",
     "chave" => "valor"
-  );
+  ); // ou
+
+  $array = [
+    "chave" => "valor",
+    "chave" => "valor"
+  ];
 
   // acessando arrays
   $array["index começando do 0"];
