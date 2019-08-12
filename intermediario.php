@@ -273,7 +273,4 @@
   setcookie("chave", "valor armazenado", time()+3600); //tempo de expiração de 1hr
   $_COOKIE["chave"]; //mostra o valor armazenado.
 
-
-
-
-
+  // Erros e Exceções

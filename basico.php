@@ -1,4 +1,9 @@
 <?php
+  /*Para instalar o PHP baixamos o zip e colocamos o caminho da pasta no PATH do windows.
+    Para ler arquivos na linha de comando usamos php nomeDoArquivo.php.
+    Para fazer códigos PHP na linha de comando usamos php -a onde vai abrir um painel interativo na linha de comando.
+  */
+
   // Variáveis - onde guardamos informações para serem usadas em todo o sistema.
   $nome = "Felipe";
 
@@ -9,6 +14,13 @@
   $boolean = true;// true or false
   $array = array(2, 3, "Felipe", true);//conjunto de informações em uma única variável
 
+  // Operações Matemáticas
+  $soma = 10 + 10;
+  $subtrasão = 10 - 10;
+  $divisao = 10 / 10;
+  $multiplicacao = 10 * 10;
+  $exponenciacao = 2 ** 3; //2 elevado ao cubo.
+  $restoDivisao = 10 % 3;
 
   //Mostrando informações na tela.
   echo "Hello World!";
@@ -16,11 +28,7 @@
   //Concatenando informações de variáveis com texto normal.
   echo "Meu nome é: " .$nome. ".";
 
-  /*Arrays
-    - lista de várias informações;
-    - pode ser informações de todos os tipos;
-    - 
-  */
+  /*Arrays - lista de várias informações. Pode ser informações de todos os tipos; */
 
   // array simples
   $array = array("index 0", "index 1", "index 2");
