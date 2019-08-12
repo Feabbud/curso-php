@@ -34,6 +34,15 @@
   $multiplicacao = 10 * 10;
   $exponenciacao = 2 ** 3; //2 elevado ao cubo.
   $restoDivisao = 10 % 3;
+  $contador = $contador + 1;
+  $contador += 1; //acrescenta 1 no valor da variável
+  $contador -= 1; //diminui 1 no valor da variável
+  $contador *= 1; //multiplica 1 no valor da variável
+  $contador /= 1; //divide 1 no valor da variável
+  $contador++; //acrescenta 1 no valor da variável
+  $contador--; //diminui 1 no valor da variável
+  ++$contador; //acrescenta antes 1 no valor da variável
+  --$contador; //diminui antes 1 no valor da variável
 
    /*Arrays - lista de várias informações. Pode ser informações de todos os tipos; */
 
