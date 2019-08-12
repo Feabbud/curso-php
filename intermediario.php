@@ -258,3 +258,10 @@
           SELECT * FROM tabela WHERE condição | colocamos a seleção que queremos separar
 
   */
+
+  /* SQL injection - técnicas para injetar códigos maliciosos pelo mysql.
+     Usamos addslashes($variavel) para proteger nosso banco.
+  */
+  $autor = addslashes($_POST["busca"]);
+
+
