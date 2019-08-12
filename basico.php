@@ -114,10 +114,14 @@
 
     && - as duas condições tem que estar corretas;
     || - uma condição correta;
-    ! - altera o valor de true para false e de false para true
+    ! - altera o valor de true para false e de false para true;
+    != - diferente.
 
     Ternário
     $variavel = $condicao ? $valorSeVerdadeiro : $valorSeFalso;
+
+    continue - pula a iteração.
+    break - intenrompe o loop.
 
   */
   $condicao = true;
