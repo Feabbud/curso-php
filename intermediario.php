@@ -73,7 +73,9 @@
   } // Para acessar arrays dentro de arrays utilizamos, no for pelo menos, o $i para o indice e outra chave com o nome.
 
 
-  // Funções
+  /* Funções 
+     
+  */
 
   function nomeDaFuncao (parametros ou não){
     $variavel = "alguma coisa";

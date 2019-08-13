@@ -52,6 +52,7 @@
 
   /* Array assosiativo 
      Geralmente para usamos a chave com um número especifico como CPF ou RG.
+     Usamos as chaves como string ou numero inteiro. PHP sempre tentará converter para número inteiro se estiver entre aspas o numero.sgit 
   */
   $array = array(
     "chave" => "valor",
