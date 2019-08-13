@@ -64,6 +64,12 @@
     "chave" => "valor"
   ];
   
+  // Mostrando arrays associativos dentro de string
+  //simples
+  echo "Meu nome é $array[nome]."; //tiramos as aspas da chave e mostramos o valor do array.
+
+  // Complexas
+  echo "Meu nome é {$array['nome']}."; //forma mais complexa mas recomendada.
 
   // acessando arrays
   $array["index começando do 0"];
@@ -94,7 +100,7 @@
   // Variávei Globais - variáveis que são padrão do PHP. Exemplo:
   $_POST["nome"];
   $_GET["numero"];
-  $_SERVER[];
+  $_SERVER["SERVER"];
 
   // Variáveis Constantes - variáveis que não se alteram no sistema. true e false são constantes padrão do PHP
   define("NOME", "Valor");
@@ -185,5 +191,5 @@
 
   // Usando arquivos múltiplos
   require "arquivo.php"; // código de importação de arquivo que para seu script se houver erros.
-  require_once "arquivo.php"; // funciona igual ao require mas importamos só uma vez não precisamos importar várias vezes.
+  require_once "arquivo.php"; // funciona igual ao require mas importamos só uma vez não precisamos importar várias vezes. Recomendado.
   include "arquivo.php"; // importa e só exibe uma mensagem de erro e continua o script.
