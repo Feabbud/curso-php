@@ -46,11 +46,13 @@
 
    /*Arrays - lista de várias informações. Pode ser informações de todos os tipos; */
 
-  // array simples
+  // Array simples
   $array = array("index 0", "index 1", "index 2"); //ou
   $array = ["index 0", "index 1", "index 2"];
 
-  // array assosiativo
+  /* Array assosiativo 
+     Geralmente para usamos a chave com um número especifico como CPF ou RG.
+  */
   $array = array(
     "chave" => "valor",
     "chave" => "valor"
@@ -60,13 +62,15 @@
     "chave" => "valor",
     "chave" => "valor"
   ];
+  
 
   // acessando arrays
   $array["index começando do 0"];
   $array["nome da chave"];
 
   //adicionar valores em array
-  $array["chave ou index"] = "valor";
+  $array["chave ou index"] = "valor";//adiciona valor na chave/indice indicado.
+  $array[] = "valor"; //adiciona o valor na ultima posição.
 
   //Mostrar todo o array na tela
   print_r($array);
@@ -86,9 +90,6 @@
     )
   );
 
-  //Para adicionar uma informação na última posição fizemos:
-    $array[] = "valor";
-
   // Variávei Globais - variáveis que são padrão do PHP. Exemplo:
   $_POST["nome"];
   $_GET["numero"];
@@ -96,7 +97,6 @@
 
   // Variáveis Constantes - variáveis que não se alteram no sistema. true e false são constantes padrão do PHP
   define("NOME", "Valor");
-  
 
   /* IF ELSE - verificador de se/senão
 

@@ -70,7 +70,7 @@
 
   for($i = 0; $i < count($array2); $i++){
     echo $array[$i]["tituar"] . PHP_EOL;
-  } // Para acessar arrays dentro de arrays utilizamos, no for pelo menos, o $i para o indice e outra chave com o nome
+  } // Para acessar arrays dentro de arrays utilizamos, no for pelo menos, o $i para o indice e outra chave com o nome.
 
 
   // Funções
