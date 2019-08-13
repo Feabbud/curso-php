@@ -95,13 +95,13 @@
     // código do saque
   }
 
-  function saque (array &$conta, float $valorASacar){ //parâmetro passado por referência e a alteração é feita no array original.
+  function saque2(array &$conta, float $valorASacar){ //parâmetro passado por referência e a alteração é feita no array original.
     //....
   }
 
   //passamos a usar a function da maneira abaixo
 
-  $resultado = nomeDaFuncao(parametro, parametro);
+  // $resultado = nomeDaFuncao(parametro, parametro);
 
   // Date - função do PHP para manipular datas. Verificar o php.net/date
 
@@ -206,7 +206,7 @@
     echo "O vencedor é o Felipe";
   }
 
-  unset($variavel ou array[indice]); //Remove a variável da memória.s
+  // unset($variavel ou array[indice]); Remove a variável da memória.
 
 /* Introdução a Criptografia
     md5() - tipo de criptografia irreversível. Usado bastante para senhas
