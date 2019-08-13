@@ -59,14 +59,14 @@
   $conta1 = [
     'titular' => 'Felipe',
     'idade' => 30
-  ]
+  ];
 
   $conta2 = [
     'titular' => 'Felipe',
     'idade' => 30
-  ]
+  ];
 
-  $contas = [$conta1, $conta2]
+  $contas = [$conta1, $conta2];
 
   for($i = 0; $i < count($array2); $i++){
     echo $array[$i]["tituar"] . PHP_EOL;
@@ -74,10 +74,12 @@
 
 
   /* Funções 
-     
+     - subrotina - apenas executa um codigo;
+     - função - retorna alguma coisa.
+     - no PHP7 podemos dizer qual o tipo de entrada que queremos nos parâmetros
   */
 
-  function nomeDaFuncao (parametros ou não){
+  function nomeDaFuncao($parametros){
     $variavel = "alguma coisa";
 
     return $variavel;
@@ -85,6 +87,10 @@
     //ou
 
     return "alguma coisa";
+  }
+
+  function saque(array $conta, float $valorASacar){
+    // código do saque
   }
 
   //passamos a usar a function da maneira abaixo
