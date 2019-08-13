@@ -77,6 +77,8 @@
      - subrotina - apenas executa um codigo;
      - função - retorna alguma coisa.
      - no PHP7 podemos dizer qual o tipo de entrada que queremos nos parâmetros
+     - Muitas vezes passamos o valor em uma função e não é alterado. Isso se da pois passamos somente uma cópia, por exemplo, de um array e não o endereço onde ele está realmente
+     alocado. Quando passamos uma cópia, estamos passando um parâmetro por valor. Para passar realmente o caminho do array, passamos por referencia e usamos & antes do parâmetro.
   */
 
   function nomeDaFuncao($parametros){
@@ -89,8 +91,12 @@
     return "alguma coisa";
   }
 
-  function saque(array $conta, float $valorASacar){
+  function saque(array $conta, float $valorASacar){ //parâmetro passado por valor, uma cópia e não altera o original.
     // código do saque
+  }
+
+  function saque (array &$conta, float $valorASacar){ //parâmetro passado por referência e a alteração é feita no array original.
+    //....
   }
 
   //passamos a usar a function da maneira abaixo
@@ -167,6 +173,11 @@
     "cidade" => "Garopaba"
   );
 
+  list($indice1, $indice2, $indice3) = $array; //Retorna o indice 0, 1, 2 do array.
+  list("chave" => $variavel, "chave" => $variavel) = $array; //retorna o indice do array associativo
+  [$indice1, $indice2, $indice3] = $array; //Retorna o indice 0, 1, 2 do array forma mais nova. PHP7
+  ["chave" => $variavel, "chave" => $variavel] = $array; //retorna o indice do array associativo PHP7
+
   $key = array_keys($array); // Retorna [0] => nome, [1] => idade, [2] => cidade.
 
   // array_values() - retorna os valores do array mostrando sua posição
@@ -194,6 +205,8 @@
   if(in_array("Felipe", $array)){
     echo "O vencedor é o Felipe";
   }
+
+  unset($variavel ou array[indice]); //Remove a variável da memória.s
 
 /* Introdução a Criptografia
     md5() - tipo de criptografia irreversível. Usado bastante para senhas
