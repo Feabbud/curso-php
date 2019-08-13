@@ -5,6 +5,8 @@
      - para popular automaticamente nossas variaveis usamos a função __construct, primeira tarefa realiza ao instanciar nossa classe.
      - para usar as variáveis dentro da nossa classe precisamos da palavra reservada $this, que dá acesso a qualquer atributo da classe.
      - quando instanciamos nossa classe devemos passar os valores para não dar erro.
+     - criamos functions chamadas de métodos, onde fazemos tarefas com nossos dados. Exemplo - sacar e depositar dinheiro;
+     - podemos retornar o próprio método se quisermos encadear métodos na chamada.
   */
   require_once "ContaCorrente.php";
 
@@ -21,4 +23,6 @@
 
   var_dump($contaJoao);
   echo "<br>";
-  var_dump($contaMaria);
+  $contaJoao->sacar(100)->depositar(50);//métodos encadeados tem que retornar $this(return $this), ou seja, eles mesmos na classe.
+  echo "<br>";
+  var_dump($contaJoao);

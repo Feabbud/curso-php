@@ -15,4 +15,14 @@
       $this->conta = $conta;
       $this->saldo = $saldo;
     }
+
+    public function sacar($valor){
+      $this->saldo -= $valor;
+      return $this;
+    }
+
+    public function depositar($valor){
+      $this->saldo += $valor;
+      return $this;
+    }
   }
