@@ -2,6 +2,7 @@
   /*Para instalar o PHP baixamos o zip e colocamos o caminho da pasta no PATH do windows.
     Para ler arquivos na linha de comando usamos php nomeDoArquivo.php.
     Para fazer códigos PHP na linha de comando usamos php -a onde vai abrir um painel interativo na linha de comando.
+    Para subir um servidor local utilizamos na linha de comando: php -S localhost:8080
   */
 
   //Mostrando informações na tela.
