@@ -20,6 +20,15 @@
      - por se públicos e estarem dentro da classe, os métodos são acessíveis fora da classe.
       - getVariavel - método para mostrar o valor da variável privada;
       - setVariavel - método para setar um valor na variável privada.
+
+     Métodos "Mágicos"
+     - para acessar e setar todos os artributos de uma classe somente em um método para cada ação nós usamos o __get e __set
+     - __get usamos para acessar os atributos privados da nossa classe
+     - __set usamos para setar os atributos privados de nossa classe. Atributos que não queremos dar acesso fazemos um if com a condição necessária retornando false.
+
+     Encapsulamento de Métodos
+     - deixamos os métodos que usamos somente é usado dentro das classes como private para não ser acessado fora da classe;
+     - métodos que não fazem snetido nenhum serem acessados fora da classe.
   */
    require_once "ContaCorrente.php";
 
@@ -45,10 +54,18 @@
    var_dump($contaJoao);
    echo "</pre> <br>";
 
-   echo $contaJoao->getTitular();
-   echo "<br>";
+   // echo $contaJoao->getTitular();
+   // echo "<br>";
 
-   $contaJoao->setTitular("João Paulo");
-   echo "<br>";
+   // $contaJoao->setTitular("João Paulo");
+   // echo "<br>";
 
-   echo $contaJoao->getTitular();
+   // echo $contaJoao->getTitular();
+
+   // echo $contaJoao->titular;
+   // echo "<br>";
+   // $contaJoao->titular = "3674-9";
+   // echo "<br>";
+   // echo $contaJoao->titular;
+
+   echo $contaMaria->getSaldo();

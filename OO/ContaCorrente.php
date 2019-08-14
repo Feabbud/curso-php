@@ -28,16 +28,42 @@
       return $this;
     }
 
-    public function getTitular(){ // método para mostrar o valor do dado privado fora da classe.
-      return $this->titular;
+    public function __get($atributo){// método que pega automaticamente qualquer atributo e mostra o valor
+      $this->protegeAtributo($atributo);
+      return $this->$atributo;
+    }
+
+    public function __set($atributo, $valor){
+      $this->protegeAtributo($atributo);
+      $this->$atributo = $valor;
+    }
+
+    private function protegeAtributo($atributo){
+      
+      if($atributo == "titular" || $atributo == "saldo"){
+        throw new Exception("O atributo $atributo continua PRIVADO");
+      }
+
     }
 
     public function getSaldo(){
-      return $this->saldo;
+      return $this->formataSaldo();
+    }
+    
+    private function formataSaldo(){
+      return number_format($this->saldo, 2, ",", ".");
     }
 
-    public function setTitular(string $titular){// método para alterar o valor da variável privada.
-      return $this->titular = $titular;
-    }
+    // public function getTitular(){ // método para mostrar o valor do dado privado fora da classe.
+    //   return $this->titular;
+    // }
+
+    // public function getSaldo(){
+    //   return $this->saldo;
+    // }
+
+    // public function setTitular(string $titular){// método para alterar o valor da variável privada.
+    //   return $this->titular = $titular;
+    // }
 
   }
