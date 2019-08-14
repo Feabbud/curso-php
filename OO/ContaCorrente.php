@@ -49,9 +49,22 @@
     public function getSaldo(){
       return $this->formataSaldo();
     }
-    
+
     private function formataSaldo(){
       return number_format($this->saldo, 2, ",", ".");
+    }
+
+    public function transferir(float $valor, ContaCorrente $conta){
+      if(!is_numeric($valor)){
+        echo "O valr indcado apra transferência esta incorreto.";
+        exit;
+      }
+
+      $this->sacar($valor);
+
+      $conta->depositar($valor);
+
+      return $this;//para encadear métodos retornamos a própria função.
     }
 
     // public function getTitular(){ // método para mostrar o valor do dado privado fora da classe.

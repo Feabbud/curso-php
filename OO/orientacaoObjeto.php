@@ -29,6 +29,14 @@
      Encapsulamento de Métodos
      - deixamos os métodos que usamos somente é usado dentro das classes como private para não ser acessado fora da classe;
      - métodos que não fazem snetido nenhum serem acessados fora da classe.
+
+     Parâmetros e seus tipos
+     - podemos garantir que os valores passados nos métodos sejam definitivamente o tipo que queremos usar;
+     - quando temos uma classe criamos automaticamente um tipo, o nome da classe;
+     - para garantir que se for passado um tipo criado pela classe passamos antes do parâmetro o nome do tipo, exemplo, ContaCorrente;
+     - tipos base como Int, String, Float e Double no PHP5 não funcionam e temos que usar o if e fazer uma condição para ver se é o tipo que queremos(procurar funções próprias do PHP);
+     - No PHP7 já podemos antes do parâmetro o nome do tipo e garantir que nosso método vai receber o valor correto.
+
   */
    require_once "ContaCorrente.php";
 
@@ -43,16 +51,16 @@
    // $contaJoao->conta = "12931-3";
    // $contaJoao->saldo = 500.00;
 
-   echo "<pre>";
-   var_dump($contaJoao);
-   echo "</pre> <br>";
+   // echo "<pre>";
+   // var_dump($contaJoao);
+   // echo "</pre> <br>";
 
-   $contaJoao->sacar(100)->depositar(50);//métodos encadeados tem que retornar $this(return $this), ou seja, eles mesmos na classe.
-   echo "<br>";
+   // $contaJoao->sacar(100)->depositar(50);//métodos encadeados tem que retornar $this(return $this), ou seja, eles mesmos na classe.
+   // echo "<br>";
 
-   echo "<pre>";
-   var_dump($contaJoao);
-   echo "</pre> <br>";
+   // echo "<pre>";
+   // var_dump($contaJoao);
+   // echo "</pre> <br>";
 
    // echo $contaJoao->getTitular();
    // echo "<br>";
@@ -68,4 +76,12 @@
    // echo "<br>";
    // echo $contaJoao->titular;
 
-   echo $contaMaria->getSaldo();
+   // echo $contaMaria->getSaldo();
+
+   var_dump($contaJoao);
+   var_dump($contaMaria);
+
+   $contaJoao->transferir(200, $contaMaria);
+
+   var_dump($contaJoao);
+   var_dump($contaMaria);
