@@ -21,10 +21,11 @@
       - getVariavel - método para mostrar o valor da variável privada;
       - setVariavel - método para setar um valor na variável privada.
 
-     Métodos "Mágicos"
+     Métodos Mágicos
      - para acessar e setar todos os artributos de uma classe somente em um método para cada ação nós usamos o __get e __set
      - __get usamos para acessar os atributos privados da nossa classe
      - __set usamos para setar os atributos privados de nossa classe. Atributos que não queremos dar acesso fazemos um if com a condição necessária retornando false.
+     - __tostring - é usado para dizer como uma classe deve se comportar ao sem impressa com echo. Retorna somente uma string.
 
      Encapsulamento de Métodos
      - deixamos os métodos que usamos somente é usado dentro das classes como private para não ser acessado fora da classe;
@@ -37,7 +38,13 @@
      - tipos base como Int, String, Float e Double no PHP5 não funcionam e temos que usar o if e fazer uma condição para ver se é o tipo que queremos(procurar funções próprias do PHP);
      - No PHP7 já podemos antes do parâmetro o nome do tipo e garantir que nosso método vai receber o valor correto.
 
+     Métodos estáticos
+     - métodos que ficam em uma classe separada para serem usados em qualquer parte do sistema, desde que seu arquivo seja importado para o arquivo que vai ser usado.
+     - public static function nome(){}
+     - usamos para chamar esse métodos NomaDaClasse::nomeDoMetodo();
+
   */
+   require_once "Validacao.php";
    require_once "ContaCorrente.php";
 
    $contaJoao = New ContaCorrente("Joao", "3254-5", "12365-8", 1000.00); //Instância um objeto. Cria um objeto conta corrente do joão. 
@@ -85,3 +92,5 @@
 
    var_dump($contaJoao);
    var_dump($contaMaria);
+
+   // echo $contaJoao;

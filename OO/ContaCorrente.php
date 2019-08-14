@@ -29,21 +29,13 @@
     }
 
     public function __get($atributo){// método que pega automaticamente qualquer atributo e mostra o valor
-      $this->protegeAtributo($atributo);
+      Validacao::protegeAtributo($atributo);
       return $this->$atributo;
     }
 
     public function __set($atributo, $valor){
-      $this->protegeAtributo($atributo);
+      Validacao::protegeAtributo($atributo);
       $this->$atributo = $valor;
-    }
-
-    private function protegeAtributo($atributo){
-      
-      if($atributo == "titular" || $atributo == "saldo"){
-        throw new Exception("O atributo $atributo continua PRIVADO");
-      }
-
     }
 
     public function getSaldo(){
@@ -55,16 +47,16 @@
     }
 
     public function transferir(float $valor, ContaCorrente $conta){
-      if(!is_numeric($valor)){
-        echo "O valr indcado apra transferência esta incorreto.";
-        exit;
-      }
-
+      Validacao::validaNumero($valor);
       $this->sacar($valor);
 
       $conta->depositar($valor);
 
       return $this;//para encadear métodos retornamos a própria função.
+    }
+
+    public function __toString(){
+      return "Isso é um objeto e não pode ser impresso.";
     }
 
     // public function getTitular(){ // método para mostrar o valor do dado privado fora da classe.
