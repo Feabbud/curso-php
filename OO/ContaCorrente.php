@@ -2,10 +2,10 @@
  //Classe de conta corrente com seus atributos.
   class ContaCorrente{
     //estrutura abstrata de algo do mundo real.
-    public $titular;
+    private $titular;
     public $agencia;
     public $conta;
-    public $saldo;
+    private $saldo;
 
     public function __construct($titular, $agencia, $conta, $saldo){
       //função construct é a primeira tarefa realizada ao instanciar nossa classe.
@@ -16,13 +16,28 @@
       $this->saldo = $saldo;
     }
 
-    public function sacar($valor){
+    // métodos da classe ContaCorrente
+
+    public function sacar(float $valor){
       $this->saldo -= $valor;
       return $this;
     }
 
-    public function depositar($valor){
+    public function depositar(float $valor){
       $this->saldo += $valor;
       return $this;
     }
+
+    public function getTitular(){ // método para mostrar o valor do dado privado fora da classe.
+      return $this->titular;
+    }
+
+    public function getSaldo(){
+      return $this->saldo;
+    }
+
+    public function setTitular(string $titular){// método para alterar o valor da variável privada.
+      return $this->titular = $titular;
+    }
+
   }
