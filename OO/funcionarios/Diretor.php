@@ -1,8 +1,8 @@
 <?php
   namespace funcionarios; //caminho onde está o arquivo.
 
-  use abstratas\Funcionarios;
+  use abstratas\FuncionarioAutenticavel;
 
-  class Diretor extends Funcionarios{
+  class Diretor extends FuncionarioAutenticavel{
 
   }
