@@ -8,9 +8,4 @@
     public function getBonificacao(){ //sobrescrevemos a função que está na nossa classe pai.
       return $this->salario * 0.3;
     }
-
-    public function aumentoSalario(){
-      return $this->salario *= 0.5;
-    }
-
   }

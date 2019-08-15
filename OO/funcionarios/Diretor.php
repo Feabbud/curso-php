@@ -5,8 +5,4 @@
 
   class Diretor extends FuncionarioAutenticavel{
 
-    public function aumentoSalario(){
-      return $this->salario * 1.5;
-    }
-    
   }

@@ -35,7 +35,13 @@ header('Content-type: text/html; charset=utf-8');
   - todos os métodos tem que ser públicos e sem corpo;
   - usamos também o USE para importar a interface para o arquivo que queremos usar;
   - implementamos da seguinte maneira: class Nomedaclasse implements Nomedainterface {}
-  - 
+  
+  Métodos Final e sobrecarga de construtores
+  - final - métodos com esse tipo de atributo não podem ser sobrescritos.
+  - Sobrecarga de construrores - só funciona até o PHP7, depois da fatal Error.
+    - fazemos uma constante nas variáveis e depois usamos de forma estática(self::nome) no construtor passado como valor de um parametro.
+    const nome = valor; __constructor($variavel = self::nome){}
+
 */
 
 require_once "autoload.php";
@@ -47,9 +53,9 @@ use sistemaInterno\GerenciadorBonificacoes;
 
 $diretor = new Diretor("123.125.586-69", 1000.00);
 $designer = new Designer("456.658.954-69", 1000.00);
-$gerenciador = new GerenciadorBonificacoes();
+// $gerenciador = new GerenciadorBonificacoes();
 
-$diretor->senha = "123456";
+// $diretor->senha = "123456";
 
 echo "<pre>";
 // Diretor herda da classe autenticavel que herda da classe funcionarios
@@ -62,11 +68,11 @@ echo "<pre>";
 // echo "A bonificação do diretor é " . $diretor->getBonificacao() . "</br></br>";
 // echo "O aumento é " . $diretor->aumentoSalario() . "</br></br>";
 
-$gerenciador->autentiqueAqui($diretor, "123456");
+// $gerenciador->autentiqueAqui($diretor, "123456");
 
-$gerenciador->registrar($diretor);
+// $gerenciador->registrar($diretor);
 
-var_dump($gerenciador->getBonificacoes());
+// var_dump($gerenciador->getBonificacoes());
 
 // echo "<br><br>";
 
@@ -77,5 +83,13 @@ var_dump($gerenciador->getBonificacoes());
 // echo "A bonificação do designer é " . $designer->getBonificacao() . "</br>";
 // echo "O aumento é " . $designer->aumentoSalario() . "</br></br>";
 
-// echo "</pre>";
+var_dump($diretor);
+var_dump($designer);
+
+$diretor->aumentoSalario();
+$designer->aumentoSalario();
+
+var_dump($diretor);
+var_dump($designer);
+echo "</pre>";
 

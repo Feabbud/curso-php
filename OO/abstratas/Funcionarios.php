@@ -16,5 +16,7 @@
       return $this->salario * 0.5;
     }
 
-    abstract public function aumentoSalario(); // assinatura da classe obrigatória para seus filhos.
+    final public function aumentoSalario(){
+      $this->salario *= 1.3;
+    } // assinatura da classe obrigatória para seus filhos.
   }
