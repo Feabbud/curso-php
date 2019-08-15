@@ -1,5 +1,7 @@
 <?php
-ini_set("display_errors", 1);//adiciona os erros na página
+ini_set('display_errors', 1);//adiciona os erros na página
+error_reporting(E_ALL);
+header('Content-type: text/html; charset=utf-8');
 /* 
   OO avançado
 
@@ -23,6 +25,17 @@ ini_set("display_errors", 1);//adiciona os erros na página
   - usado se tem comportamento diferente entre as classes que vão herdar da classe pai;
   - PHP não faz herança múltipla, o que pode ser feito é herdar de uma classe que já herdou outra classe, fazendo uma "herança múltipla"
   - criar um diagrama de classes para organizar melhor antes de começar a programar.
+
+  Classes Abstratas e Interfaces
+  - classes abstratas podem ser herdadas mas não podem ser instanciadas;
+  - quando queremos que métodos sejam obrigatórios em classes filhas, tornamos eles abstratos, escrevendo somente a assinatura do método;
+ 
+  Interfaces
+  - pouco semelhante a classes abstratas: não pode ser instanciada, todos os métodos tem que ser implementados pelas classes que a instanciam;
+  - todos os métodos tem que ser públicos e sem corpo;
+  - usamos também o USE para importar a interface para o arquivo que queremos usar;
+  - implementamos da seguinte maneira: class Nomedaclasse implements Nomedainterface {}
+  - 
 */
 
 require_once "autoload.php";
@@ -30,27 +43,39 @@ require_once "autoload.php";
 use funcionarios\Diretor;//ao invés de usarmos o require, agora usamos o USE e NAMESPACE para fazer essas inclusões;
 // use teste\Diretor as teste; criando um apelido para a classe de mesmo nome;
 use funcionarios\Designer;
+use sistemaInterno\GerenciadorBonificacoes;
 
 $diretor = new Diretor("123.125.586-69", 1000.00);
 $designer = new Designer("456.658.954-69", 1000.00);
+$gerenciador = new GerenciadorBonificacoes();
+
+$diretor->senha = "123456";
 
 echo "<pre>";
 // Diretor herda da classe autenticavel que herda da classe funcionarios
-var_dump($diretor);
+// var_dump($diretor);
 
 // método usado de uma classe que herdou outra classe
 // $diretor->senha = "123";
 // var_dump($diretor->autenticacao("123"));
 
-echo "A bonificação do diretor é " . $diretor->getBonificacao() . "</br></br>";
-echo "O aumento é " . $diretor->aumentoSalario() . "</br></br>";
+// echo "A bonificação do diretor é " . $diretor->getBonificacao() . "</br></br>";
+// echo "O aumento é " . $diretor->aumentoSalario() . "</br></br>";
 
-// Designer herda da classe funcionarios
-var_dump($designer);
+$gerenciador->autentiqueAqui($diretor, "123456");
 
-// métodos sobrescritos pela classe designer
-echo "A bonificação do designer é " . $designer->getBonificacao() . "</br>";
-echo "O aumento é " . $designer->aumentoSalario() . "</br></br>";
+$gerenciador->registrar($diretor);
 
-echo "</pre>";
+var_dump($gerenciador->getBonificacoes());
+
+// echo "<br><br>";
+
+// // Designer herda da classe funcionarios
+// var_dump($designer);
+
+// // métodos sobrescritos pela classe designer
+// echo "A bonificação do designer é " . $designer->getBonificacao() . "</br>";
+// echo "O aumento é " . $designer->aumentoSalario() . "</br></br>";
+
+// echo "</pre>";
 

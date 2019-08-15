@@ -2,7 +2,7 @@
 
 namespace abstratas;
 
-class FuncionarioAutenticavel extends Funcionarios{
+abstract class FuncionarioAutenticavel extends Funcionarios{
    public $senha;
 
    public function autenticacao($senha){

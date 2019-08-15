@@ -2,7 +2,7 @@
   // classe abstrata que vai fornecer seus dados para as classes que possuem os mesmos.
   namespace abstratas;
 
-  class Funcionarios {
+  abstract class Funcionarios { //classe não pode ser instanciada.
     public $nome;
     public $cpf;
     protected $salario;//protected protege o atributo para não ter acesso de fora mas as classes que fazem o extends podem ter acesso.
@@ -16,7 +16,5 @@
       return $this->salario * 0.5;
     }
 
-    public function aumentoSalario(){
-      return $this->salario * 1.5;
-    }
+    abstract public function aumentoSalario(); // assinatura da classe obrigatória para seus filhos.
   }
