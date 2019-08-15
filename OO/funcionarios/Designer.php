@@ -1,6 +1,8 @@
 <?php
   namespace funcionarios; //caminho onde está o arquivo.
 
-  class Designer{
+  use abstratas\Funcionarios;
+
+  class Designer extends Funcionarios{
 
   }
