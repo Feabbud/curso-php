@@ -5,11 +5,47 @@ require_once "Calculadora.php";
 /*
   Array - Aula 1
   - sizeof - retorna o número de elementos que tem o array;
-  - 
 */
 
-$notas = [9, 3, 10, 5, 10, 8, 10];
+// $notas = [9, 3, 10, 5, 10, 8, 10];
 
-$calculadora = new Calculadora();
+// $calculadora = new Calculadora();
 
-echo $calculadora->calculaMedia($notas);
+// echo $calculadora->calculaMedia($notas);
+
+/*
+  Array - Aula 2
+  - sort() - ordena o array do menor número do valor para o maior
+  - explode("delimitador", $variávelString) - cria um array separados onde as palavras são separadas quando encontrado o delimitador.
+  - implode("glue/cola", $variavelArray) - cria uma string e coloca a glue/cola entre cada indice do array.
+*/
+
+// $ordenar = [1,9,5,8,2,7];
+
+// foreach($ordenar as $ordem){
+//   echo "O menor valor do array é $ordem </br>";
+// }
+
+// echo "<pre>";
+
+// var_dump($ordenar);
+
+// sort($ordenar);
+
+// var_dump($ordenar);
+
+// echo "O menor saldo é: " . $ordenar[0];
+
+// echo "</pre>";
+
+$string = "Felipe, Sacha, Bella, Choco, Baguera";
+
+$array_nomes = explode(", ", $string);
+
+foreach($array_nomes as $nomes){
+  echo "<p> Olá $nomes </p>";
+}
+
+$stringNova = implode(", ", $array_nomes);
+
+echo "Sou uma string: $stringNova";
