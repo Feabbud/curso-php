@@ -1,5 +1,7 @@
 <?php declare(strict_types=1); //faz com que os tipos sejam estritos, não havendo conversão.
 
+namespace Alura;
+
 class ArrayUtils
 {
   public static function remover(string $elemento, array &$array)//array passado por referência para remover do próprio array e não de sua cópia.

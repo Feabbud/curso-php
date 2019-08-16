@@ -1,6 +1,8 @@
 <?php declare(strict_types=1); //faz com que os tipos sejam estritos, não havendo conversão.
 
-require_once "Calculadora.php";
+namespace Alura;
+
+require "autoload.php";
 
 /*
   Array - Aula 1
@@ -67,8 +69,6 @@ require_once "Calculadora.php";
 
 */
 
-require_once "ArrayUtils.php";
-
 $array = ["12", 20, "sacha", 29, "web", 12];
 
 echo "<pre>";
@@ -77,6 +77,9 @@ var_dump($array);
 
 ArrayUtils::remover("12", $array); //chamada de métodos static que não precisam ser instanciados.
 
-var_dump($array);
-
 echo "</pre>";
+
+/*
+  Array - Aula 4
+  - 
+*/
