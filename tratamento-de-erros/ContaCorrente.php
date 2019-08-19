@@ -1,5 +1,7 @@
 <?php
+  require "Validacao.php";
  //Classe de conta corrente com seus atributos.
+
   class ContaCorrente{
     //estrutura abstrata de algo do mundo real.
     private $titular;
@@ -17,16 +19,24 @@
       $this->conta = $conta;
       $this->saldo = $saldo;
 
+      self::$totalDeContas++; //acessa atributos estáticos dentro das classes.
+
       try { //se não conseguir fazer alguma coisa.
+        // self::$taxaOperacao = intDiv(30, self::$totalDeContas); taxa começa com 30 e vamos dividindo ela pelo numero de contas. intDiv força um erro.
 
-        self::$taxaOperacao = intDiv(30, self::$totalDeContas); //taxa começa com 30 e vamos dividindo ela pelo numero de contas. intDiv força um erro.
+        if(self::$totalDeContas < 1){
+          throw new Exception("Número não válido. Não podemos dividir por 0.");//cria e lança uma nova exceção do tipo Exception manualmente.
+        }
 
-      } catch (Error $erro) {//venha para esse erro. Usamos Error ou Exception, depende do que for passado de erro.
-          echo "Não podemos dividir por zero.";
+        self::$taxaOperacao  = (30 / self::$totalDeContas);
+        
+      // } catch (Error $erro) { venha para esse erro. Usamos Error ou Exception, depende do que for passado de erro.
+
+      } catch (Exception $erro) {//criamos um objeto $erro do tipo Exception
+          // echo "Não podemos dividir por zero.";
+          echo $erro->getMessage(); // Imprimimos na tela a mensagem criada na exception do try.
           exit; // sai do nosso código.
       }
-
-      self::$totalDeContas++; //acessa atributos estáticos dentro das classes.
     }
 
     // métodos da classe ContaCorrente
@@ -59,8 +69,10 @@
       return number_format($this->saldo, 2, ",", ".");
     }
 
-    public function transferir(float $valor, ContaCorrente $conta){
+    public function transferir($valor, ContaCorrente $conta){
       Validacao::validaNumero($valor);
+      Validacao::valorIgualZero($valor);
+      
       $this->sacar($valor);
 
       $conta->depositar($valor);

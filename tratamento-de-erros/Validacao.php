@@ -14,8 +14,14 @@ class Validacao{
 
   public static function validaNumero($valor){
     if(!is_numeric($valor)){
-      echo "O valr indcado apra transferência esta incorreto.";
-      exit;
+      throw new InvalidArgumentException("Argumento Inválido.");// exception para argumento inválido.
     }
-}
+  }
+
+  public static function valorIgualZero($valor){
+    if($valor <= 0){
+      throw new Exception("Número inválido. Tentar novamente.");
+    }
+  }
+
 }
