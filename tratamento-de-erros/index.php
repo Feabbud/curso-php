@@ -8,6 +8,11 @@
   Aula 2 - Lançando exceções
   - throw new Exception("Exceção") - cria uma exceção personalizada;
   - InvalidArgumentException -  exceção para argumentos inválidos;
+
+  Aula 3 - Tratamento e exceções
+  - para um bloco try, podemos ter quantos catch forem necessários;
+  - classe Exception é correto deixar por último pois pega todas as exceptions e pode passar uma despercebido;
+  - Antes de começar a fazer as validações, verificar os erros pré definidos.
 */
 
 require "ContaCorrente.php";
@@ -31,8 +36,12 @@ var_dump($contaBella);
 echo "</pre>";
 
 try {
-  $contaBella->transferir(-1000, $contaFelipe);
-} catch (Exception $error) {
+  $contaBella->transferir(1000, $contaFelipe);
+} catch (\InvalidArgumentException $error) {
+  echo "Invalid Argument. ";
+  echo $error->getMessage();
+} catch (\Exception $error){
+  echo "Exception. ";
   echo $error->getMessage();
 }
 
