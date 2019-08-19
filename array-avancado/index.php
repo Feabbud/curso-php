@@ -69,17 +69,46 @@ require "autoload.php";
 
 */
 
-$array = ["12", 20, "sacha", 29, "web", 12];
+// $array = ["12", 20, "sacha", 29, "web", 12];
 
-echo "<pre>";
+// echo "<pre>";
 
-var_dump($array);
+// var_dump($array);
 
-ArrayUtils::remover("12", $array); //chamada de métodos static que não precisam ser instanciados.
+// ArrayUtils::remover("12", $array); //chamada de métodos static que não precisam ser instanciados.
 
-echo "</pre>";
+// echo "</pre>";
 
 /*
   Array - Aula 4
-  - 
+  - Autoload criado na aula orientação a objeto 2;
 */
+
+/*
+  Array - Aula 5
+  - array_diff(array1, array2) - retorna um array com os dados diferentes entre eles;
+  - array_merge(array1, array2) - retorna um novo array com os dois array no mesmo array;
+  - array_combine(array que se torna chave, array que se torna valor) - faz um merge e cria um array associativo;
+  - para imprimir arrays associativos temos que usar as {} se ele estiver no echo com "";
+  - array_key_exists("chave que queremos ver se existe, array) - retorna true ou false sobre a chave pesquisada;
+  
+*/
+
+$array1 = ["felipe","sacha", "joao", "claudia", "bella", "choco"];
+
+$array2= [1, 8, 5, 0, 10, 15];
+$array3= [1, 2, 3, 7, 10, 15];
+
+$diferencaDoArray = array_diff($array3, $array2);
+
+$combinaArray = array_combine($array1, $array2);
+
+echo "<pre>";
+var_dump($diferencaDoArray);
+echo "</pre>";
+
+$maiores = ArrayUtils::saldoMaiores(5, $combinaArray);
+
+echo "<pre>";
+var_dump($maiores);
+echo "</pre>";

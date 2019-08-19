@@ -14,4 +14,17 @@ class ArrayUtils
       echo "erro ao excluir.";
     }
   }
+
+  public static function saldoMaiores(int $saldo, array $array) : array // : tipo - é o tipo de retorno da função
+  {
+    $numerosMaiores = [];
+
+    foreach ($array as $chave => $valor) {
+      if($valor > $saldo){
+        $numerosMaiores[] = $chave;
+      }
+    }
+
+    return $numerosMaiores;
+  }
 }
