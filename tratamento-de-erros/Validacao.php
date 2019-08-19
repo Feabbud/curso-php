@@ -23,5 +23,4 @@ class Validacao{
       throw new Exception("Número inválido. Tentar novamente.");
     }
   }
-
 }

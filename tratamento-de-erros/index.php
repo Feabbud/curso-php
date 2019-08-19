@@ -13,9 +13,15 @@
   - para um bloco try, podemos ter quantos catch forem necessários;
   - classe Exception é correto deixar por último pois pega todas as exceptions e pode passar uma despercebido;
   - Antes de começar a fazer as validações, verificar os erros pré definidos.
+
+  Aula 4 - Criando nossa exceções
+  - podemos criar nossas próprias exceções, criando uma classe que extenda da classe Exception;
+  - nessa classe temos que copiar o __contruct da classe exception com a mensagem, o código e uma outra exceção se haver;
+  - dentro desse construct chamamos o construct da classe exception com: parent::__construct e passamos as variáveis da mensagem, código e exception;
+  - Essa nova exceção é carregada no catch por Exception.
 */
 
-require "ContaCorrente.php";
+include "autoload.php";
 
 $contaJoao = new ContaCorrente("joao", 36749, 127893, 3000 );
 $contaMaria = new ContaCorrente("Maria", 36749, 132589, 5000 );
@@ -36,7 +42,7 @@ var_dump($contaBella);
 echo "</pre>";
 
 try {
-  $contaBella->transferir(1000, $contaFelipe);
+  $contaBella->transferir(6000, $contaFelipe);
 } catch (\InvalidArgumentException $error) {
   echo "Invalid Argument. ";
   echo $error->getMessage();

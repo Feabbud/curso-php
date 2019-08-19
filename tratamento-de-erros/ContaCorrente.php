@@ -1,8 +1,8 @@
 <?php
-  require "Validacao.php";
- //Classe de conta corrente com seus atributos.
+  use exception\SaldoInsuficienteException; //usando a classe de saldo insuficiente.
 
-  class ContaCorrente{
+ //Classe de conta corrente com seus atributos.
+ class ContaCorrente{
     //estrutura abstrata de algo do mundo real.
     private $titular;
     public $agencia;
@@ -42,6 +42,9 @@
     // métodos da classe ContaCorrente
 
     public function sacar(float $valor){
+      if($valor > $this->saldo){
+        throw new SaldoInsuficienteException("Não tem saldo Insuficiente para saque");       
+      }
       $this->saldo -= $valor;
       return $this;
     }
