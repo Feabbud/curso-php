@@ -11,17 +11,18 @@
 
   Aula 3 - Tratamento e exceções
   - para um bloco try, podemos ter quantos catch forem necessários;
-  - classe Exception é correto deixar por último pois pega todas as exceptions e pode passar uma despercebido;
+  - classe Exception é correto deixar por último pois pega todas as exceptions e pode passar uma exceção que criamos despercebido;
   - Antes de começar a fazer as validações, verificar os erros pré definidos.
 
   Aula 4 - Criando nossa exceções
   - podemos criar nossas próprias exceções, criando uma classe que extenda da classe Exception;
+  - usamos "\" antes do nome exception para o PHP buscar nas funções padrão da linguagem;
   - nessa classe temos que copiar o __contruct da classe exception com a mensagem, o código e uma outra exceção se haver;
   - dentro desse construct chamamos o construct da classe exception com: parent::__construct e passamos as variáveis da mensagem, código e exception;
   - Essa nova exceção é carregada no catch por Exception.
 */
 
-include "autoload.php";
+include "autoload.php"; //Carrega automaticamente os arquivos da mesma pasta sem namespace. Arquivos de outras pastas tem que possuir namespace.
 
 $contaJoao = new ContaCorrente("joao", 36749, 127893, 3000 );
 $contaMaria = new ContaCorrente("Maria", 36749, 132589, 5000 );
@@ -43,12 +44,22 @@ echo "</pre>";
 
 try {
   $contaBella->transferir(6000, $contaFelipe);
-} catch (\InvalidArgumentException $error) {
-  echo "Invalid Argument. ";
-  echo $error->getMessage();
+
+} catch (\InvalidArgumentException $error) { //barra invertida faz com que a classe seja procurada nas bibliotecas do PHP.s
+    // echo "Invalid Argument. ";
+    echo $error->getMessage();
+
+} catch (exception\SaldoInsuficienteException $error){
+    //se a exception for reconhecida, faz alguma rotina. Nesse caso acrescenta 1 em total de saques.
+    echo $error->getMessage() .". Seu saldo é de: " . $error->saldo . " e não foi possível fazer o saque de " . $error->saque . ".";
+    $contaBella->totalDeSaques++;
+    // echo "SaldoInsuficienteException. ";
+
+    echo $error->getMessage();
+
 } catch (\Exception $error){
-  echo "Exception. ";
-  echo $error->getMessage();
+    // echo "Exception. ";
+    echo $error->getMessage();
 }
 
 echo "<pre>";

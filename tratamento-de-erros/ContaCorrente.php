@@ -10,6 +10,7 @@
     private $saldo;
     public static $totalDeContas;//atributo vai ser usado por todas as estâncias da classe.
     public static $taxaOperacao;//uma taxa que quando maior o numero de contas, menor ela fica, usada por todas as contas.
+    public $totalDeSaques;
 
     public function __construct($titular, $agencia, $conta, $saldo){
       //função construct é a primeira tarefa realizada ao instanciar nossa classe.
@@ -43,7 +44,7 @@
 
     public function sacar(float $valor){
       if($valor > $this->saldo){
-        throw new SaldoInsuficienteException("Não tem saldo Insuficiente para saque");       
+        throw new \exception\SaldoInsuficienteException("Não tem saldo para saque", $this->saldo, $valor); //recupera as variaveis saldo e valor da exception SaldoInsuficiente.
       }
       $this->saldo -= $valor;
       return $this;
