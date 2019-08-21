@@ -20,9 +20,19 @@
   - nessa classe temos que copiar o __contruct da classe exception com a mensagem, o código e uma outra exceção se haver;
   - dentro desse construct chamamos o construct da classe exception com: parent::__construct e passamos as variáveis da mensagem, código e exception;
   - Essa nova exceção é carregada no catch por Exception.
+
+  Aula 5 - Stacktrace e Finally
+  - para lançar uma nova exceção em um bloco catch, usamos o throw normal e nossa exception personalizada ou não.
+  - getCode() - código da exceção;
+  - getMessage() - mensagem da exceção;
+  - getPrevious() - exceção anterior;
+  - getTraceAsString - mostra o arquivo e linha onde teve a exceção e a parte do código onde aconteceu;
+  -  finally - independente do que acontece no bloco try ou catch o finally sera executado
 */
 
 include "autoload.php"; //Carrega automaticamente os arquivos da mesma pasta sem namespace. Arquivos de outras pastas tem que possuir namespace.
+
+echo "<pre>";
 
 $contaJoao = new ContaCorrente("joao", 36749, 127893, 3000 );
 $contaMaria = new ContaCorrente("Maria", 36749, 132589, 5000 );
@@ -60,8 +70,16 @@ try {
 } catch (\Exception $error){
     // echo "Exception. ";
     echo $error->getMessage();
+    // echo $error->getPrevious();
+    // echo $error->getPrevious()->getTraceAsString();
+    // echo $error->getTraceAsString();
+
 }
 
-echo "<pre>";
+// echo "<br>";
+// echo ContaCorrente::$operacaoNaoRealizada;
+// echo "<br>";
+
 var_dump($contaBella);
 echo "</pre>";
+

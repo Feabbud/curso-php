@@ -1,5 +1,7 @@
 <?php
-  use exception\SaldoInsuficienteException; //usando a classe de saldo insuficiente.
+
+use exception\OperacaoNaoRealizada;
+use exception\SaldoInsuficienteException; //usando a classe de saldo insuficiente.
 
  //Classe de conta corrente com seus atributos.
  class ContaCorrente{
@@ -11,6 +13,7 @@
     public static $totalDeContas;//atributo vai ser usado por todas as estâncias da classe.
     public static $taxaOperacao;//uma taxa que quando maior o numero de contas, menor ela fica, usada por todas as contas.
     public $totalDeSaques;
+    public static $operacaoNaoRealizada;//verificamos quantas operações não foram realizadas. Bom para arquivo e decisões do banco, por exemplo
 
     public function __construct($titular, $agencia, $conta, $saldo){
       //função construct é a primeira tarefa realizada ao instanciar nossa classe.
@@ -74,6 +77,7 @@
     }
 
     public function transferir($valor, ContaCorrente $conta){
+     try {
       Validacao::validaNumero($valor);
       Validacao::valorIgualZero($valor);
       
@@ -82,6 +86,14 @@
       $conta->depositar($valor);
 
       return $this;//para encadear métodos retornamos a própria função.
+
+     } catch (\Exception $error) {
+       ContaCorrente::$operacaoNaoRealizada++;
+       throw new \exception\OperacaoNaoRealizada("Operação não Realizada. ", 55, $error);
+       //\exception\OperacaoNaoRealiza - namespace sem o use.
+     } finally {
+       echo "Aparece independente do resultado do try ou catch <br>";
+     }
     }
 
     public function __toString(){
