@@ -15,7 +15,11 @@ Composer aula 1 - Instalando
 
 Composer aula 2 - Gerenciando dependências
 - buscar os pacotes no site packagist.org, repositório central mas não único;
-- 
+- para instalar pacotes usamos o composer require <nome-do-pacote> - isso faz com que o nome do pacote vá para o json;
+- composer.json declara toda a estrutura e os pacotes do nosso projeto;
+- para instalar pacotes que já estão no composer.json e não foram instalados faremos: composer install;
+- para atualizar os pacotes para versões mais novas, faremos - composer update;
+- separamos em uma pasta src nosso código das classes para organizar melhor.
 
 
 */
