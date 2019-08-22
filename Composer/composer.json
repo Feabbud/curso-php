@@ -1,0 +1,16 @@
+{
+    "name": "feabbud/buscar-cursos",
+    "description": "Componente para buscar curso.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Felipe Abbud",
+            "email": "git@felipeabbud.com.br"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/dom-crawler": "^4.3",
+        "symfony/css-selector": "^4.3"
+    }
+}
