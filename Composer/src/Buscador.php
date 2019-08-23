@@ -1,14 +1,14 @@
 <?php
   namespace Alura\BuscadorDeCursos;
   
-  use \GuzzleHttp\Client;
+  use \GuzzleHttp\ClientInterface;
   use \Symfony\Component\DomCrawler\Crawler;
 
   class Buscador{
     private $httpClient;
     private $crawler;
 
-    public function __construct(Client $httpClient, Crawler $crawler)
+    public function __construct(ClientInterface $httpClient, Crawler $crawler)
     {
       $this->httpClient = $httpClient;
       $this->crawler = $crawler;

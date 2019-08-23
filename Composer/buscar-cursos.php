@@ -18,8 +18,8 @@ $crawler = new Crawler(); //estancia o crawler para ler o html da requisição
 // $cursos = $crawler->filter('span.card-curso__nome'); //filtra o html e procura pela classe indicada
 
 $buscador = new Buscador($cliente, $crawler);
-$cursos = $buscador->buscar('cursos-online-programacao/php');
+$cursos = $buscador->buscar('/cursos-online-programacao/php');
 
 foreach ($cursos as $curso) { //faz a lista e exibe na tela.
-  echo $curso->textContent . PHP_EOL;
+  echo $curso . PHP_EOL;
 }

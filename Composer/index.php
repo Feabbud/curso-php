@@ -21,5 +21,8 @@ Composer aula 2 - Gerenciando dependências
 - para atualizar os pacotes para versões mais novas, faremos - composer update;
 - separamos em uma pasta src nosso código das classes para organizar melhor.
 
+Composer Aula 3 - Entendendo o Autoload
+- site PHP-fig-org.org
+- 
 
 */
