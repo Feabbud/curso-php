@@ -46,6 +46,15 @@ Composer Aula 3 - Entendendo o Autoload
   - faremos o composer dump-autoload;
   - informa o autoload que temos que carregar esse arquivo para usarmos.
 
+Composer Aula 4 - Ferramentas de qualidade de código
+- composer guarda os arquivos executáveis na pasta vendor/bin;
+- PHPUnit - ferramenta de testes de aplicação php (curso alura)
+  - instalamos pelo composer require --dev phpunit/phpunit (--dev não será baixado no ambiente de produção)
+  - para instalar a aplicação sem o phpunit usamos composer install --no-dev - para ambiente de produção
+- PHPcs - ferramenta para ver se os arquivos estão conforme a PSR12 - padrões de código.
+  - composer require --dev "squizlabs/php_codesniffer=*"
+- PHAN - faz uma análise estática da sintaxe do código.s
+
 
 
 */
