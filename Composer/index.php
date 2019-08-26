@@ -53,8 +53,23 @@ Composer Aula 4 - Ferramentas de qualidade de código
   - para instalar a aplicação sem o phpunit usamos composer install --no-dev - para ambiente de produção
 - PHPcs - ferramenta para ver se os arquivos estão conforme a PSR12 - padrões de código.
   - composer require --dev "squizlabs/php_codesniffer=*"
-- PHAN - faz uma análise estática da sintaxe do código.s
+- PHAN - faz uma análise estática da sintaxe do código.
 
-
+Composer Aula 5 - Automatizando processos com scripts
+- podemos criar scripts para utilizar comandos complexos no composer.
+- para isso colocamos no json o código:
+        "scripts": {
+            "nome Fácil" : "comando que o nome vai substituir"
+        }
+- para criar rotinas nós criamos uma lista de scripts com:
+        "nome rotina" : ["@script1", "@script2"];
+- para criar descrições dos scripts nós utilizamos:
+        "scripts-descriptions" : {
+            "nome script" : "Descrição", 
+            "nome script" : "Descrição
+        }
+- podemos criar qualquer tipo de comando no composer, código cmd, código PHP para chamar funções, etc.
+- podemos criar tarefas em momentos especificos, após eventos do composer, antes do install, depois do install, depois do update, etc. Pesquisar na documentação do composer.
+- 
 
 */
