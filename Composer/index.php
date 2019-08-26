@@ -70,6 +70,9 @@ Composer Aula 5 - Automatizando processos com scripts
         }
 - podemos criar qualquer tipo de comando no composer, código cmd, código PHP para chamar funções, etc.
 - podemos criar tarefas em momentos especificos, após eventos do composer, antes do install, depois do install, depois do update, etc. Pesquisar na documentação do composer.
-- 
 
+Composer Aula 6 - Publicando o código
+- versionamento de pacotes. Ler o site semver.org
+- mandar o pacote para o github com a tag
+- fazer login no packagist e enviar o pacote
 */
