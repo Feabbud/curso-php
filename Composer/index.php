@@ -72,7 +72,10 @@ Composer Aula 5 - Automatizando processos com scripts
 - podemos criar tarefas em momentos especificos, após eventos do composer, antes do install, depois do install, depois do update, etc. Pesquisar na documentação do composer.
 
 Composer Aula 6 - Publicando o código
-- versionamento de pacotes. Ler o site semver.org
-- mandar o pacote para o github com a tag
-- fazer login no packagist e enviar o pacote
+- versionamento de pacotes. Ler o site semver.org;
+- adicionar uma licença para o projeto;
+- mandar o pacote para o github com a tag;
+- fazer login no packagist e enviar o pacote;
+- para usar o caminho vendor/bin/buscar-cursos.php
+- colocamos no composer a linha: "bin" : ["buscar-cursos.php"]
 */
