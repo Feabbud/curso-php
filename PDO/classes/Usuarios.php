@@ -24,7 +24,7 @@ class Usuarios{
     
     $conexao = Conexao::conectarBanco();
     //query que vai selecionar todos nossos usuários.
-    $query = "SELECT * FROM usuarios"; 
+    $query = "SELECT id_usuario, nome_usuario, email_usuario, u.id_tipo_usuario, t.tipo_usuario  FROM usuarios u INNER JOIN tipo_usuario t ON u.id_tipo_usuario = t.id_tipo_usuario"; 
     //executamos nossa query com o método query(). Esse método retorna um objeto chamado PDOstatement que retorna as linhas do nosso banco.
     $resultado = $conexao->query($query);
     //para retornar nossas linhas do banco e tranformar ese retorno em array usamos o método fetchAll.

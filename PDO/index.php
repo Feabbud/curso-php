@@ -35,7 +35,14 @@
     - vamos tratar os erros começando com o try/catch no começo do nosso arquivo listar;
     - criaremos uma variavel DEBUG = true para diferenciar os erros de desenvolvimento e produção;
     - se DEBUG for true mostra uma mensagem para o dev, se não mosra mesnsagem personalizada.
-    - 
+    
+    PDO parte 2 - Segurança e Organização
+
+    PDO Aula 1
+    - criamos o inner join para lista o nome do tipo do usuario em outra tabela
+    - fazemos uma contagem na nossa lista para ver se possui alguma linha no nosso banco com um if
+      if(count($lista) > 0){ mostra } else { não tem nada cadastrado };
+    
   */
 
   require_once "global.php";
@@ -59,7 +66,8 @@
 </head>
 <body>
   <?php foreach($listas as $lista) : ?>
-  <p>Nome: <?= $lista["nome_usuario"]; ?> - 
+  <p>Nome: <?= $lista["nome_usuario"]; ?> <br> 
+     Tipo: <?= $lista["tipo_usuario"]; ?> <br> 
     <a href="editar-usuarios.php?id=<?= $lista["id_usuario"]; ?>"> Editar </a> 
     <a href="excluir-usuarios.php?id=<?= $lista["id_usuario"]; ?>"> Excluir </a> 
   </p>
