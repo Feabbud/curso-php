@@ -43,12 +43,16 @@
     - fazemos uma contagem na nossa lista para ver se possui alguma linha no nosso banco com um if
       if(count($lista) > 0){ mostra } else { não tem nada cadastrado };
     
+    PDO Aula 2
+    - vamos transforma
   */
 
   require_once "global.php";
   try {
-    $usuarios = new Usuarios();
-    $listas = $usuarios->listar();
+    // $usuarios = new Usuarios();
+    $listas = Usuarios::listar();
+    $listasTipos = TiposUsuarios::listar();
+    
   } catch (\Exception $error) {
     Erro::tratarErro($error);
   }
@@ -88,6 +92,16 @@
     <label for="senha">
       Senha:
       <input type="password" name="senha" id="senha">
+    </label>
+
+    <label for="tipos">
+      Permissão:
+      <select name="tipos" id="tipos">
+        <?php foreach($listasTipos as $lista): ?>
+          <option value="<?= $lista['id_tipo_usuario'] ?>"> <?= $lista['tipo_usuario']; ?></option>
+        <?php endforeach; ?>
+      </select>
+
     </label>
 
     <p> <input type="submit" value="Cadastrar"></p>

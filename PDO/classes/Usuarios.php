@@ -17,7 +17,7 @@ class Usuarios{
   }
 
 
-  public function listar()
+  public static function listar()
   {
 
     // throw new Exception("Erro ao listar arquivos");
