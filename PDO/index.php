@@ -112,7 +112,6 @@
           <option value="<?= $lista['id_tipo_usuario']; ?>"> <?= $lista['tipo_usuario']; ?></option>
         <?php endforeach; ?>
       </select>
-
     </label>
 
     <p> <input type="submit" value="Cadastrar Usuário"></p>

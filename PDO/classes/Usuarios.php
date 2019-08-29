@@ -44,14 +44,10 @@ class Usuarios{
 
     // $resultado = $conexao->query($query);
 
-    $lista = $stmt->fetchAll();
-
-    // print_r($resultado);
-
-    foreach($lista as $linha){
-      $this->nome = $linha["nome_usuario"];
-      $this->email = $linha["email_usuario"];
-    }
+    $linha = $stmt->fetch();
+    $this->nome = $linha["nome_usuario"];
+    $this->email = $linha["email_usuario"];
+    $this->tipoUsuario = $linha["id_tipo_usuario"];
   }
 
   public function inserir()
@@ -76,11 +72,12 @@ class Usuarios{
   public function atualizar()//método de atualização de dados
   {
     $conexao = Conexao::conectarBanco();    
-    $query = "UPDATE usuarios SET nome_usuario = :nome , email_usuario = :email WHERE id_usuario = :id"; 
+    $query = "UPDATE usuarios SET nome_usuario = :nome , email_usuario = :email, id_tipo_usuario = :tipo WHERE id_usuario = :id"; 
 
     $stmt = $conexao->prepare($query);
     $stmt->bindValue(':nome', $this->nome);
     $stmt->bindValue(':email', $this->email);
+    $stmt->bindValue(':tipo', $this->tipoUsuario);
     $stmt->bindValue(':id', $this->id);
     $stmt->execute();
     // $conexao->exec($query);

@@ -4,10 +4,10 @@
   try {
     $id = $_GET["id"];
     $usuario = new Usuarios($id);
+    $listasTipos = TiposUsuarios::listar();
   } catch (\Exception $error) {
     Erro::tratarErro($error);
-  }
-  
+  }  
  
 ?>
 
@@ -33,7 +33,23 @@
     <input type="text" name="email" id="email" value="<?= $usuario->email; ?>">
   </label>
 
-  <p> <input type="submit" value="Cadastrar"></p>
+  <label for="tipos">
+    Permissão:
+    <select name="tipos" id="tipos">
+      <?php $selected = ""; ?>
+      <?php foreach($listasTipos as $lista): ?>
+        <?php if($lista['id_tipo_usuario'] == $usuario->tipoUsuario){ $selected = "selected"; }  ?>
+        <option <?= $selected; ?> value="<?= $lista['id_tipo_usuario']; ?>"> <?= $lista['tipo_usuario']; ?></option>
+      <?php
+        $selected = "";
+
+        endforeach;
+      ?>
+
+    </select>
+  </label>
+
+  <p> <input type="submit" value="Atualizar"></p>
   </form>
 </body>
 </html>

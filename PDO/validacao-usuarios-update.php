@@ -6,11 +6,13 @@ try{
   $id = $_POST['id'];
   $nome = $_POST['nome'];
   $email = $_POST['email'];
+  $tipos = $_POST['tipos'];
 
   $usuario = new Usuarios($id);
 
   $usuario->nome = $nome;
   $usuario->email = $email;
+  $usuario->tipoUsuario = $tipos;
 
   $usuario->atualizar();
 
