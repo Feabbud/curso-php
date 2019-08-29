@@ -5,6 +5,8 @@
   $nome = $_POST['nome'];
   $email = $_POST['email'];
   $senha = md5($_POST['senha']);
+  $tipoUsuario = $_POST['tipos'];
+
 
   //instanciamos a classe
   $usuario = new Usuarios();
@@ -13,6 +15,7 @@
   $usuario->nome = $nome;
   $usuario->email = $email;
   $usuario->senha = $senha;
+  $usuario->tipoUsuario = $tipoUsuario;
 
   //inserimos os dados no banco
   $usuario->inserir();

@@ -12,4 +12,12 @@
 
       return $lista;
     }
+
+    public function inserir(){
+      $conexao = Conexao::conectarBanco();
+      $query = "INSERT INTO tipo_usuario(tipo_usuario) VALUES (:tipoUsuario)";
+      $stmt = $conexao->prepare($query);
+      $stmt->bindValue(':tipoUsuario', $this->nome );
+      $stmt->execute();
+    }
   }

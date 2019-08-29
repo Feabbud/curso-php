@@ -44,7 +44,17 @@
       if(count($lista) > 0){ mostra } else { não tem nada cadastrado };
     
     PDO Aula 2
-    - vamos transforma
+    - vamos transformar os métodos listar em statics para usar em qualquer lugar do programa;
+    - facilita para fazer o foreach de todos os dados que vamos usar no projeto;
+    - criamos a classe tipos e fizemos os métodos listar e inserir.
+
+    PDO Aula 3
+    - para ter mais segurança no nosso projeto contra SQL Injections, vamos proteger os dados recebidos pelo navegador preparando nossa query antes de executar usando o PDO::prepare();
+    - vamos usar o prepare(), que vai preparar a query e não vai executar retornando para nós uma variável PDOStatement.
+    - colocarmos chaves nos values da nossa query (:nomeChave) e para colocar os dados nessas chaves usaremos o bindValue(':chave', valor) onde fará a validação dos dados passados;
+    - no fim usaremos o execute() que é um método do stmt e não da conexão que executa a query;
+    - 
+
   */
 
   require_once "global.php";
@@ -52,7 +62,7 @@
     // $usuarios = new Usuarios();
     $listas = Usuarios::listar();
     $listasTipos = TiposUsuarios::listar();
-    
+
   } catch (\Exception $error) {
     Erro::tratarErro($error);
   }
@@ -69,9 +79,10 @@
   <title>Document</title>
 </head>
 <body>
+  <h2>Usuarios</h2>
   <?php foreach($listas as $lista) : ?>
   <p>Nome: <?= $lista["nome_usuario"]; ?> <br> 
-     Tipo: <?= $lista["tipo_usuario"]; ?> <br> 
+     Tipo: <?= $lista["nome_tipo"]; ?> <br> 
     <a href="editar-usuarios.php?id=<?= $lista["id_usuario"]; ?>"> Editar </a> 
     <a href="excluir-usuarios.php?id=<?= $lista["id_usuario"]; ?>"> Excluir </a> 
   </p>
@@ -79,7 +90,7 @@
   <?php endforeach; ?>
 
   <form action="validacao-usuarios.php" method="post">
-
+    <h3>Cadastro</h3>
     <label for="nome">
       Nome:
       <input type="text" name="nome" id="nome">
@@ -98,13 +109,28 @@
       Permissão:
       <select name="tipos" id="tipos">
         <?php foreach($listasTipos as $lista): ?>
-          <option value="<?= $lista['id_tipo_usuario'] ?>"> <?= $lista['tipo_usuario']; ?></option>
+          <option value="<?= $lista['id_tipo_usuario']; ?>"> <?= $lista['tipo_usuario']; ?></option>
         <?php endforeach; ?>
       </select>
 
     </label>
 
-    <p> <input type="submit" value="Cadastrar"></p>
+    <p> <input type="submit" value="Cadastrar Usuário"></p>
+  </form>
+
+  <hr>
+
+  <h2>Tipos de Usuarios</h2>
+  <?php foreach($listasTipos as $lista) : ?>
+    <p><?= $lista["tipo_usuario"]; ?>
+  <?php endforeach; ?>
+  <form action="validacao-tipos.php" method="post">
+    <h3>Cadastro</h3>
+    <label for="tipo">
+      Tipo de Usuário:
+      <input type="text" name="tipo" id="tipo">
+      <input type="submit" value="Cadastrar tipo">
+    </label>
   </form>
   
 </body>
