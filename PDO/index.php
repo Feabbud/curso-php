@@ -53,7 +53,11 @@
     - vamos usar o prepare(), que vai preparar a query e não vai executar retornando para nós uma variável PDOStatement.
     - colocarmos chaves nos values da nossa query (:nomeChave) e para colocar os dados nessas chaves usaremos o bindValue(':chave', valor) onde fará a validação dos dados passados;
     - no fim usaremos o execute() que é um método do stmt e não da conexão que executa a query;
-    - 
+    
+    PDO Aula 4
+    - atualizamos o código de edição dos usuarios com a lsita de categorias;
+    - faremos os arquivos de editar categorias;
+    - faremos a exclusão das categorias;
 
   */
 
