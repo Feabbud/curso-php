@@ -3,8 +3,8 @@
 
   try{
     $id = $_GET["id"];
-    $usuario = new Usuarios($id);
-    $usuario->excluir();
+    $tipo = new TiposUsuarios($id);
+    $tipo->excluir();
     header("Location: index.php");
   }catch (\Exception $error) {
     Erro::tratarErro($error);

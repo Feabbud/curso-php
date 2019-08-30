@@ -126,6 +126,8 @@
   <h2>Tipos de Usuarios</h2>
   <?php foreach($listasTipos as $lista) : ?>
     <p><?= $lista["tipo_usuario"]; ?>
+    <a href="editar-tipos.php?id=<?= $lista["id_tipo_usuario"]; ?>"> Editar </a> 
+    <a href="excluir-tipos.php?id=<?= $lista["id_tipo_usuario"]; ?>"> Excluir </a> 
   <?php endforeach; ?>
   <form action="validacao-tipos.php" method="post">
     <h3>Cadastro</h3>
