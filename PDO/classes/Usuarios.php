@@ -17,7 +17,6 @@ class Usuarios{
       }
   }
 
-
   public static function listar()
   {
 
@@ -32,6 +31,17 @@ class Usuarios{
     $lista = $resultado->fetchAll();
 
     return $lista;
+  }
+
+  public static function listarPorCategoria($tipoUsuario){
+    $conexao = Conexao::conectarBanco();
+    $query = "SELECT nome_usuario, email_usuario FROM usuarios WHERE id_tipo_usuario = :id_tipo_usuario" ;
+
+    $stmt = $conexao->prepare($query);
+    $stmt->bindValue(':id_tipo_usuario', $tipoUsuario);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
   }
 
   public function carregar(){

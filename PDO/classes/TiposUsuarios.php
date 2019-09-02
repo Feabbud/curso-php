@@ -2,6 +2,7 @@
   class TiposUsuarios{
     public $id;
     public $nome;
+    public $usuarios;
 
     public function __construct($id = false)
     {
@@ -59,5 +60,10 @@
       $stmt = $conexao->prepare($query);
       $stmt->bindValue(':id', $this->id);
       $stmt->execute();
+    }
+
+    public function carregarUsuarios()
+    {
+      $this->usuarios = Usuarios::listarPorCategoria($this->id);
     }
   }
