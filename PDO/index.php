@@ -5,12 +5,14 @@
       $var = new PDO('banco:host=ondeEstaHospedado'; 'dbname=nomedobanco'; 'login'; 'senha' );
     - depois criamos uma query para buscar nossas linhas para fazer um teste com a conexão
       $query = "SELECT * FROM usuarios";
-    - executamos nossa query com o método query(). Esse método retorna um objeto chamado PDOstatement que retorna as linhas do nosso banco.
-    - para retornar nossas linhas do banco, outras informações e transformar esse retorno em array usamos o método fetchAll.
+    - executamos nossa query com o método query(). Esse método retorna um objeto chamado PDOstatement que retorna as linhas do nosso banco;
+    - para retornar nossas linhas do banco, outras informações e transformar esse retorno em array usamos o método fetchAll;
+    - para ver se temos alguma linha retornando, usamos um if verificando e contando com count() ou rowCount();
+    - com count() recuperaremos o valor da nossa $query em uma variável e verificamos. Com o rowCount(), usamos com o objeto do PDOstatement que retorna do banco $linha->rowCount().
 
     PDO Aula 2
     - para inserir dados no banco usamos o mesmo percurso do selecionar mudando apenas a query e o modo de execução da query.
-    - na query usamos um query e para executar o insert usamos o método exec(), que apenas executa a query;
+    - na query usamos um query e para executar o insert usamos o método exec(), que apenas executa a query ou também pelo método query() do PDO;
     - para organizarmos nosso código e facilitar algum tipo de atualização, fazemos uma classe conexao e dentro dessa classe criamos uma function static para criar nossa conexão. 
     
     PDO Aula 3 
