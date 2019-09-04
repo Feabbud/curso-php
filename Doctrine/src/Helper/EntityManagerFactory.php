@@ -15,6 +15,7 @@ class EntityManagerFactory
    * @return EntityMananerInterface;
    * @throws \Doctrine\ORM\ORMException;
    */
+  
   public function getEntityManager() : EntityManagerInterface
   {
     $rootDir = __DIR__ . "/../..";//diretorio raiz do nosso projeto

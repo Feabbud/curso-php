@@ -223,7 +223,7 @@
     - para deixar em branco em um possivel cadastro(não obrigatório), anotamos como mulo no phpmyadmin;
     - primary key, chave única;
     - AI, auto incremento;
-
+ 
     Comandos de seleção - SELECT
       SELECT coluna FROM tabela; - select geral de uma coluna específica;
       SELECT coluna, coluna FROM tabela; - select de várias colunas específicas;
